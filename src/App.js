@@ -1,13 +1,18 @@
-import Navbar from "./components/Navbar/Navbar";
-import { Outlet } from "react-router-dom";
-import Grid from "@mui/material/Grid";
+import "./App.css";
+import Home from "./pages/Home";
+import SearchAppBar from "./components/AppBar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Tour from "./pages/Tour";
 
 function App() {
 	return (
-		<Grid container className="App">
-			<Navbar />
-			<Outlet />
-		</Grid>
+		<BrowserRouter>
+			<SearchAppBar />
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/about" element={<Tour />} />
+			</Routes>
+		</BrowserRouter>
 	);
 }
 
